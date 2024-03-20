@@ -1,45 +1,44 @@
 # CMOTB Evaluation ToolKit
 
-[[中文版](./README.md)] [[English](./README_en.md)]
+[[English](./README_en.md)] [[中文版](./README.md)]
 
-## 使用教程
+## Usage
 
-CMOTB 评测工具包含简单集、困难集和联合集三个部分，分别位于 Easy、Hard 和 Joint 子文件夹中。各子集的评测方法完全相同，以下教程以其中一个子集为例：
+The CMOTB evaluation toolkit consists of three parts: Easy Set, Hard Set, and Joint Set, located in the Easy, Hard, and Joint subfolders respectively. The evaluation methods for each subset are identical. The following tutorial uses one of these subsets as an example:
 
-1. 将测评结果文件放在同一目录下，并将文件夹命名为跟踪器的名称；
-2. 将结果文件夹放在 `tracking_results` 路径下；
-3. 在 `utils/config_tracker.m` 中配置需要测试的跟踪器结果；
-4. 运行 `PlotPR.m` / `PlotNPR.m` / `PlotSR.m`，即可得到对应指标的测评结果。
+1. Place the evaluation result files in the same directory and name the folder after the tracker's name.
+2. Put the result folder in the `tracking_results` directory.
+3. Configure the tracker results to be tested in `utils/config_tracker.m`.
+4. Run `PlotPR.m` / `PlotNPR.m` / `PlotSR.m` to obtain the evaluation results for the corresponding metrics.
 
-若需要评测具体属性的结果，可将 `utils/config_sequence.m` 中的 `all_dataset.txt` 修改为 `属性名.txt`。CMOTB 包含的所有属性如下：
+To evaluate results for specific attributes, you can modify `all_dataset.txt` in `utils/config_sequence.m` to `attribute_name.txt`, where `attribute_name` is the specific attribute you want to evaluate. CMOTB includes the following attributes:
 
-| 属性名 |             定义              |
-| :----: | :---------------------------: |
-|   FO   |        Full Occlusion         |
-|   PO   |       Partial Occlusion       |
-|  DEF   |          Deformation          |
-|   SV   |        Scale Variation        |
-|  ROT   |           Rotation            |
-|   FM   |          Fast Motion          |
-|   CM   |         Camara Motion         |
-|   IV   |    Illumination Variation     |
-|   TB   |          Target Blur          |
-|   OV   |          Out-of-View          |
-|   BC   |     Background Clustering     |
-|  SIO   | Similar Interferential Object |
-|   LR   |        Low Resolution         |
-|  ARC   |      Aspect Ratio Change      |
-|   VC   |       Viewpoint Change        |
-|   MA   |      Modality Adaptation      |
-|   MM   |       Modality Mutation       |
-|   MD   |        Modality Delay         |
+| Attribute name |          Definition           |
+| :------------: | :---------------------------: |
+|       FO       |        Full Occlusion         |
+|       PO       |       Partial Occlusion       |
+|      DEF       |          Deformation          |
+|       SV       |        Scale Variation        |
+|      ROT       |           Rotation            |
+|       FM       |          Fast Motion          |
+|       CM       |         Camara Motion         |
+|       IV       |    Illumination Variation     |
+|       TB       |          Target Blur          |
+|       OV       |          Out-of-View          |
+|       BC       |     Background Clustering     |
+|      SIO       | Similar Interferential Object |
+|       LR       |        Low Resolution         |
+|      ARC       |      Aspect Ratio Change      |
+|       VC       |       Viewpoint Change        |
+|       MA       |      Modality Adaptation      |
+|       MM       |       Modality Mutation       |
+|       MD       |        Modality Delay         |
 
-若需分别对不同模态切换次数进行评测，可将 `utils/config_sequence.m` 中的 `all_dataset.txt` 修改为如下文件名：
+If you need to evaluate modality switch times separately, you can modify `all_dataset.txt` in `utils/config_sequence.m` to the following filenames:
 
-|  文件名   | 对应切换次数 |
-| :-------: | :----------: |
-| `sw1.txt` |     $1$      |
-| `sw2.txt` |     $2$      |
-| `sw3.txt` |     $3$      |
-| `sw4.txt` |   $\ge 4$    |
-
+| Filename  | Switch Time |
+| :-------: | :---------: |
+| `sw1.txt` |     $1$     |
+| `sw2.txt` |     $2$     |
+| `sw3.txt` |     $3$     |
+| `sw4.txt` |   $\ge 4$   |
