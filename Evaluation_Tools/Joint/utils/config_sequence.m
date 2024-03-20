@@ -2,8 +2,8 @@ function sequences = config_sequence()
 % config sequences for evaluation
 % the configuration files are placed in ./sequence_evaluation_config/;
 
-%dataset_name = 'all_dataset.txt';
-dataset_name = 'VC.txt';
+dataset_name = 'all_dataset.txt';
+%dataset_name = 'PO.txt';
 %dataset_name = 'sw1.txt';
 
 % check if the file exists
