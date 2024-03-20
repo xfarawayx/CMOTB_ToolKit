@@ -1,6 +1,6 @@
 # CMOTB Evaluation ToolKit
 
-[[English](./README_en.md)] [[中文版](./README.md)]
+[[English](./README.md)] [[中文版](./README_zh.md)]
 
 ## Usage
 
